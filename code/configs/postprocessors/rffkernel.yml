@@ -1,0 +1,8 @@
+postprocessor:
+  name: rffkernel
+  APS_mode: False
+  postprocessor_args:
+    kernel_bandwidth: 1
+    feature_dim: 1000
+    target_rate: 0.05
+    feature_space: 'penultimate' # ['input', 'penultimate', 'all']
