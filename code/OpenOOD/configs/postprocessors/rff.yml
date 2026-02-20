@@ -1,0 +1,14 @@
+postprocessor:
+  name: rff
+  APS_mode: True
+  postprocessor_args:
+    sigma: 0.5              # Kernel bandwidth (for normalized features, try 0.1-2.0)
+    D: 1024                 # RFF dimension
+    alpha: 0.05             # Target FPR (5%) for threshold calibration
+    feature_space: penultimate  # Options: 'penultimate', 'all', 'input'
+    normalize: True         # L2 normalize features (recommended for cross-dataset transfer)
+    diagnose: True          # Track class score distributions (saves to .npz files)
+    score_mode: margin      # 'max' = max class score, 'margin' = max - 2nd max
+    variance_weighted: True # Normalize class scores by per-class variance
+  postprocessor_sweep:
+    sigma: [0.1, 0.2, 0.5, 1.0, 2.0, 5.0]
