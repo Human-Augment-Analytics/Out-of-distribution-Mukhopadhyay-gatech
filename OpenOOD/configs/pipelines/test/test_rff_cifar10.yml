@@ -1,0 +1,84 @@
+dataset:
+  name: imagenet200
+  num_classes: 200
+  pre_size: 256
+  image_size: 224
+  interpolation: bilinear
+  train:
+    imglist_pth: ./data/benchmark_imglist/imagenet200/train_imagenet200.txt
+    data_dir: ./data/images_largescale/imagenet_1k/
+    batch_size: 128
+    shuffle: false
+    num_workers: 8
+  val:
+    imglist_pth: ./data/benchmark_imglist/imagenet200/val_imagenet200.txt
+    data_dir: ./data/images_largescale/imagenet_1k/
+    batch_size: 128
+    shuffle: false
+    num_workers: 8
+  test:
+    imglist_pth: ./data/benchmark_imglist/imagenet200/test_imagenet200.txt
+    data_dir: ./data/images_largescale/imagenet_1k/
+    batch_size: 128
+    shuffle: false
+    num_workers: 8
+
+ood_dataset:
+  nearood:
+    datasets: [ssb_hard, ninco]
+    ssb_hard:
+      imglist_pth: ./data/benchmark_imglist/imagenet200/test_ssb_hard.txt
+      data_dir: ./data/images_largescale/imagenet_1k/
+      batch_size: 128
+      shuffle: false
+      num_workers: 8
+    ninco:
+      imglist_pth: ./data/benchmark_imglist/imagenet200/test_ninco.txt
+      data_dir: ./data/images_largescale/
+      batch_size: 128
+      shuffle: false
+      num_workers: 8
+  farood:
+    datasets: [inaturalist, textures, openimage_o]
+    inaturalist:
+      imglist_pth: ./data/benchmark_imglist/imagenet200/test_inaturalist.txt
+      data_dir: ./data/images_largescale/
+      batch_size: 128
+      shuffle: false
+      num_workers: 8
+    textures:
+      imglist_pth: ./data/benchmark_imglist/imagenet200/test_textures.txt
+      data_dir: ./data/images_largescale/
+      batch_size: 128
+      shuffle: false
+      num_workers: 8
+    openimage_o:
+      imglist_pth: ./data/benchmark_imglist/imagenet200/test_openimage_o.txt
+      data_dir: ./data/images_largescale/
+      batch_size: 128
+      shuffle: false
+      num_workers: 8
+
+network:
+  name: resnet18_224x224
+  pretrained: true
+  checkpoint: ./results/imagenet200_resnet18_224x224_base_e90_lr0.1_default/s0/best.ckpt
+  num_classes: 200
+
+preprocessor:
+  name: base
+
+postprocessor:
+  name: rff
+  postprocessor_args:
+    sigma: auto
+    rff_dim: 2048
+    alpha: 0.05
+    fit_ratio: 0.8
+    feature_batch_size: 1024
+
+evaluator:
+  name: ood
+
+recorder:
+  name: default
