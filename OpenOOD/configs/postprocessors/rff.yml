@@ -1,10 +1,10 @@
 postprocessor:
   name: rff
   postprocessor_args:
-    kernel_bandwidth: 1.0
-    feature_dim: 2000
+    kernel_bandwidth: auto
+    feature_dim: 2048
     target_rate: 0.05
     feature_space: penultimate
   postprocessor_sweep:
-    kernel_bandwidth: [0.1, 0.5, 1.0, 2.0]
+    kernel_bandwidth: [0.1, 0.25, 0.35, 0.5, 1.0]
   APS_mode: False
