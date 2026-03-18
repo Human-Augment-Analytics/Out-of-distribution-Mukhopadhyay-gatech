@@ -1,5 +1,8 @@
 # OOD (Out-of-Distribution) Detection Methods
 
+Survey paper from 2025 : https://dl.acm.org/doi/epdf/10.1145/3760390
+
+
 ##  Supervised Methods
 
 ###  Requires Dataset During Inference
