@@ -1,0 +1,22 @@
+postprocessor:
+  name: kernel_attention
+  APS_mode: False
+  postprocessor_args:
+    rff_dim: 2048
+    sigma: 1.0
+    sigma_mode: median   # 'fixed' or 'median'
+    sigma_scale: 0.5
+    score_mode: per_class_threshold
+    alpha: 0.05
+    kernel_weighted: false
+    # MRL-style layer weights [layer1, layer2, layer3, penultimate]
+    # Derived from Yosinski linear probe: product of near_avg x far_avg AUROC
+    # Set all to 1.0 for uniform weighting (original 4-layer behaviour)
+    layer_weights: [0.712, 0.734, 0.771, 0.790]
+    # Dual-head: separate near (layer3+penultimate) and far (all 4 layers) scoring heads
+    dual_head: false
+    head_alpha: 0.5   # weight for far head; (1-head_alpha) for near head
+
+  postprocessor_sweep:
+    sigma: [0.5, 1.0, 2.0, 5.0]
+    rff_dim: [1024, 2048, 4096]
