@@ -43,5 +43,6 @@ Survey paper from 2025 : https://dl.acm.org/doi/epdf/10.1145/3760390
 | **Kernel PCA (RFF)** | [arXiv](https://arxiv.org/pdf/2402.02949) | Not in leaderboard |  |  | Applies PCA on nonlinear random Fourier features. Reconstruction error used as OOD score |
 | **Gram Matrices** | [arXiv](https://arxiv.org/pdf/1912.12510) | Not in leaderboard |  |  | Uses CNN activation statistics (layer/channel variance). Threshold-based detection |
 | **Diffusion-based OOD** | [CVPRW 2023](https://openaccess.thecvf.com/content/CVPR2023W/VAND/papers/Graham_Denoising_Diffusion_Models_for_Out-of-Distribution_Detection_CVPRW_2023_paper.pdf) | Not in leaderboard |  |  | Uses reconstruction error from diffusion steps with MSE / Mahalanobis distance |
-
+| Leveraging Perturbation robustness | [CVPR 2025](https://openaccess.thecvf.com/content/CVPR2025/papers/Chen_Leveraging_Perturbation_Robustness_to_Enhance_Out-of-Distribution_Detection_CVPR_2025_paper.pdf) | 95.00 |  | |  Uses gradient based image updates for robust MSP score generation on top of adversarial trained model
+| Leveraging Perturbation robustness | [2024](https://openreview.net/pdf?id=TtCPFN5fhO) | |  | 94.43 (not all OOD covered lower than current leading number )|  Uses gradient based image updates for robust MSP score generation on top of adversarial trained model
 ---
