@@ -1,0 +1,16 @@
+postprocessor:
+  name: rffnystrom
+  APS_mode: True
+  postprocessor_args:
+    kernel: rbf
+    sigma: 0.5              # Kernel bandwidth (for normalized features, try 0.1-2.0)
+    m: 256                 # Num anchors 
+    alpha: 0.05             # Target FPR (5%) for threshold calibration
+    ridge: 0
+    anchor_method: kmeans     # Options: 'kmeans', 'random'
+    feature_space: minmax  # Options: 'penultimate', 'all', 'input', 'minmax'
+    normalize: True         # L2 normalize features (recommended for cross-dataset transfer)
+    diagnose: True          # Track class score distributions (saves to .npz files)
+  postprocessor_sweep:
+    sigma: [0.0125,0.025,0.05,0.1]
+    m: [128,256,300]

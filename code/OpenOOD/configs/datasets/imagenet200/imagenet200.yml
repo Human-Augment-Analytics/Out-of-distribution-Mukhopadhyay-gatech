@@ -15,19 +15,19 @@ dataset:
 
   train:
     dataset_class: ImglistDataset
-    data_dir: ./data/images_largescale/
-    imglist_pth: ./data/benchmark_imglist/imagenet200/train_imagenet200.txt
+    data_dir: /storage/ice-shared/cs8903onl/kernel-datasets/data/images_largescale/
+    imglist_pth: /storage/ice-shared/cs8903onl/kernel-datasets/data/benchmark_imglist/imagenet200/train_imagenet200.txt
     batch_size: 256
     shuffle: True
   val:
     dataset_class: ImglistDataset
-    data_dir: ./data/images_largescale/
-    imglist_pth: ./data/benchmark_imglist/imagenet200/val_imagenet200.txt
+    data_dir: /storage/ice-shared/cs8903onl/kernel-datasets/data/images_largescale/
+    imglist_pth: /storage/ice-shared/cs8903onl/kernel-datasets/data/benchmark_imglist/imagenet200/val_imagenet200.txt
     batch_size: 256
     shuffle: False
   test:
     dataset_class: ImglistDataset
-    data_dir: ./data/images_largescale/
-    imglist_pth: ./data/benchmark_imglist/imagenet200/test_imagenet200.txt
+    data_dir: /storage/ice-shared/cs8903onl/kernel-datasets/data/images_largescale/
+    imglist_pth: /storage/ice-shared/cs8903onl/kernel-datasets/data/benchmark_imglist/imagenet200/test_imagenet200.txt
     batch_size: 256
     shuffle: False

@@ -14,38 +14,38 @@ ood_dataset:
   num_machines: '@{num_machines}'
   split_names: [val, nearood, farood, csid]
   val:
-    data_dir: ./data/images_largescale/
-    imglist_pth: ./data/benchmark_imglist/imagenet/val_openimage_o.txt
+    data_dir: /storage/ice-shared/cs8903onl/kernel-datasets/data/images_largescale/
+    imglist_pth: /storage/ice-shared/cs8903onl/kernel-datasets/data/benchmark_imglist/imagenet/val_openimage_o.txt
   nearood:
     datasets: [ssb_hard, ninco]
     ssb_hard:
-      data_dir: ./data/images_largescale/
-      imglist_pth: ./data/benchmark_imglist/imagenet/test_ssb_hard.txt
+      data_dir: /storage/ice-shared/cs8903onl/kernel-datasets/data/images_largescale/
+      imglist_pth: /storage/ice-shared/cs8903onl/kernel-datasets/data/benchmark_imglist/imagenet/test_ssb_hard.txt
     ninco:
-      data_dir: ./data/images_largescale/
-      imglist_pth: ./data/benchmark_imglist/imagenet/test_ninco.txt
+      data_dir: /storage/ice-shared/cs8903onl/kernel-datasets/data/images_largescale/
+      imglist_pth: /storage/ice-shared/cs8903onl/kernel-datasets/data/benchmark_imglist/imagenet/test_ninco.txt
   farood:
     datasets: [inaturalist, textures, openimageo]
     textures:
-      data_dir: ./data/images_classic/
-      imglist_pth: ./data/benchmark_imglist/imagenet/test_textures.txt
+      data_dir: /storage/ice-shared/cs8903onl/kernel-datasets/data/images_classic/
+      imglist_pth: /storage/ice-shared/cs8903onl/kernel-datasets/data/benchmark_imglist/imagenet/test_textures.txt
     inaturalist:
-      data_dir: ./data/images_largescale/
-      imglist_pth: ./data/benchmark_imglist/imagenet/test_inaturalist.txt
+      data_dir: /storage/ice-shared/cs8903onl/kernel-datasets/data/images_largescale/
+      imglist_pth: /storage/ice-shared/cs8903onl/kernel-datasets/data/benchmark_imglist/imagenet/test_inaturalist.txt
     openimageo:
-      data_dir: ./data/images_largescale/
-      imglist_pth: ./data/benchmark_imglist/imagenet/test_openimage_o.txt
+      data_dir: /storage/ice-shared/cs8903onl/kernel-datasets/data/images_largescale/
+      imglist_pth: /storage/ice-shared/cs8903onl/kernel-datasets/data/benchmark_imglist/imagenet/test_openimage_o.txt
   csid:
     datasets: [imagenetv2, imagenetc, imagenetr, imagenetes]
     imagenetv2:
-      data_dir: ./data/images_largescale/
-      imglist_pth: ./data/benchmark_imglist/imagenet/test_imagenet_v2.txt
+      data_dir: /storage/ice-shared/cs8903onl/kernel-datasets/data/images_largescale/
+      imglist_pth: /storage/ice-shared/cs8903onl/kernel-datasets/data/benchmark_imglist/imagenet/test_imagenet_v2.txt
     imagenetc:
-      data_dir: ./data/images_largescale/
-      imglist_pth: ./data/benchmark_imglist/imagenet/test_imagenet_c.txt
+      data_dir: /storage/ice-shared/cs8903onl/kernel-datasets/data/images_largescale/
+      imglist_pth: /storage/ice-shared/cs8903onl/kernel-datasets/data/benchmark_imglist/imagenet/test_imagenet_c.txt
     imagenetr:
-      data_dir: ./data/images_largescale/
-      imglist_pth: ./data/benchmark_imglist/imagenet/test_imagenet_r.txt
+      data_dir: /storage/ice-shared/cs8903onl/kernel-datasets/data/images_largescale/
+      imglist_pth: /storage/ice-shared/cs8903onl/kernel-datasets/data/benchmark_imglist/imagenet/test_imagenet_r.txt
     imagenetes:
-      data_dir: ./data/images_largescale/
-      imglist_pth: ./data/benchmark_imglist/imagenet/test_imagenet_es.txt
+      data_dir: /storage/ice-shared/cs8903onl/kernel-datasets/data/images_largescale/
+      imglist_pth: /storage/ice-shared/cs8903onl/kernel-datasets/data/benchmark_imglist/imagenet/test_imagenet_es.txt

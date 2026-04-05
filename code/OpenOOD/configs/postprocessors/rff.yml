@@ -5,10 +5,14 @@ postprocessor:
     sigma: 0.5              # Kernel bandwidth (for normalized features, try 0.1-2.0)
     D: 1024                 # RFF dimension
     alpha: 0.05             # Target FPR (5%) for threshold calibration
-    feature_space: penultimate  # Options: 'penultimate', 'all', 'input'
-    normalize: True         # L2 normalize features (recommended for cross-dataset transfer)
+    feature_space: UMAP     # Options: 'penultimate', 'all', 'input', 'minmax', 'pcalayer', 'pcaall', 'UMAP'
+    K: 150                   # Number of principal components for PCA feature spaces or UMAP dimesionality
+    means: 100               # Number of means(per class) for hopfield inspired energy
+    B: 50
+    normalize: True         # L2 normalize features (recommended for cross-dataset transfer) (roughly equal magnitude of features too)
     diagnose: True          # Track class score distributions (saves to .npz files)
-    score_mode: margin      # 'max' = max class score, 'margin' = max - 2nd max
-    variance_weighted: True # Normalize class scores by per-class variance
+    score_mode: max          # 'max' = max class score, 'margin' = max - 2nd max, 'pred-aware', 'kmeans'
+    variance_weighted: False # Normalize class scores by per-class variance 
   postprocessor_sweep:
-    sigma: [0.1, 0.2, 0.5, 1.0, 2.0, 5.0]
+    sigma: [0.2,0.25,0.3,0.35,0.4,0.45,0.5]
+    D: [512,1024,2048,3072]

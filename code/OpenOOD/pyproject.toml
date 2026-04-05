@@ -1,45 +1,58 @@
-[tool.poetry]
+[project]
 name = "openood"
-version = "1.5"
+version = "1.5.0"
 description = "This package provides a unified test platform for Out-of-Distribution detection."
-authors = ["openood dev team <jingkang001@e.ntu.edu.sg>"]
 readme = "README.md"
-homepage = "https://github.com/Jingkang50/OpenOOD"
-repository = "https://github.com/Jingkang50/OpenOOD"
-classifiers = [
-    "Programming Language :: Python :: 3",
-    "License :: OSI Approved :: Apache Software License",
-    "Operating System :: OS Independent",
+requires-python = ">=3.10.2,<3.11"
+
+dependencies = [
+    "torch>=1.13.1",
+    "numpy<2",
+    "torchvision>=0.13",
+    "scikit-learn",
+    "json5",
+    "matplotlib",
+    "scipy",
+    "tqdm",
+    "pyyaml>=5.4.1",
+    "pre-commit",
+    "opencv-python>=4.4.0.46",
+    "imgaug>=0.4.0",
+    "pandas",
+    "diffdist>=0.1",
+    "Cython>=0.29.30",
+    "faiss-cpu>=1.7.2",
+    "gdown>=4.7.1",
+    "libmr>=0.1.9",
+    "statsmodels",
+    "cudf-cu12==26.2.*",
+    "dask-cudf-cu12==26.2.*",
+    "cuml-cu12==26.2.*",
+    "cugraph-cu12==26.2.*",
+    "nx-cugraph-cu12==26.2.*",
+    "cuxfilter-cu12==26.2.*",
+    "cucim-cu12==26.2.*",
+    "pylibraft-cu12==26.2.*",
+    "raft-dask-cu12==26.2.*",
+    "cuvs-cu12==26.2.*",
 ]
-packages = [{include = "openood"}]
 
-[tool.poetry.dependencies]
-python = "^3.8"
-torch = ">=1.13.1"
-torchvision = ">=0.13"
-scikit-learn = "*"
-json5 = "*"
-matplotlib = "*"
-scipy = "*"
-tqdm = "*"
-pyyaml = ">=5.4.1"
-pre-commit = "*"
-opencv-python = ">=4.4.0.46"
-imgaug = ">=0.4.0"
-pandas = "*"
-diffdist = ">=0.1"
-Cython = ">=0.29.30"
-faiss-cpu = ">=1.7.2"
-gdown = ">=4.7.1"
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4.0",
+    "pytest-cov>=4.1.0",
+    "pytest-mock>=3.11.1",
+]
 
-[tool.poetry.group.dev.dependencies]
-pytest = "^7.4.0"
-pytest-cov = "^4.1.0"
-pytest-mock = "^3.11.1"
-
-[tool.poetry.scripts]
+[project.scripts]
 test = "pytest:main"
 tests = "pytest:main"
+
+[[tool.uv.index]]
+url = "https://pypi.nvidia.com/"
+
+[tool.uv.extra-build-dependencies]
+libmr = ["numpy<2", "cython>=0.17"]
 
 [tool.pytest.ini_options]
 minversion = "7.0"
@@ -100,5 +113,6 @@ directory = "htmlcov"
 output = "coverage.xml"
 
 [build-system]
-requires = ["poetry-core>=1.0.0"]
-build-backend = "poetry.core.masonry.api"
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+

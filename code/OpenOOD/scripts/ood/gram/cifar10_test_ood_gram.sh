@@ -17,10 +17,10 @@ python main.py \
     configs/networks/resnet18_32x32.yml \
     configs/pipelines/test/test_ood.yml \
     configs/preprocessors/base_preprocessor.yml \
-    configs/postprocessors/gram.yml \
+    configs/postprocessors/rff.yml \
     --num_workers 8 \
     --network.checkpoint 'results/cifar10_resnet18_32x32_base_e100_lr0.1_default/s0/best.ckpt' \
-    --mark 0
+    --mark 1
 
 ############################################
 # alternatively, we recommend using the
