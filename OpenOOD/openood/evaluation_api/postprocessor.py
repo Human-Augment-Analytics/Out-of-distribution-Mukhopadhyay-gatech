@@ -17,7 +17,7 @@ from openood.postprocessors import (
     GENPostprocessor, NNGuidePostprocessor, RelationPostprocessor,
     T2FNormPostprocessor, ReweightOODPostprocessor, fDBDPostprocessor,
     AdaScalePostprocessor, IODINPostprocessor, NCIPostprocessor,CFOODPostprocessor,
-    VRAPostprocessor, GrOODPostprocessor, RFFPostprocessor, )
+    VRAPostprocessor, GrOODPostprocessor, RFFPostprocessor, RFFMultiLayerPostprocessor, )
 from openood.utils.config import Config, merge_configs
 
 postprocessors = {
@@ -74,6 +74,7 @@ postprocessors = {
     'vra': VRAPostprocessor,
     'cfood': CFOODPostprocessor,
     'rff': RFFPostprocessor, 
+    'rff_multilayer': RFFMultiLayerPostprocessor,
 }
 
 link_prefix = 'https://raw.githubusercontent.com/Jingkang50/OpenOOD/main/configs/postprocessors/'

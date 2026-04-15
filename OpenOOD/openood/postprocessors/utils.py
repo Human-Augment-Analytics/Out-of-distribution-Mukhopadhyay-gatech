@@ -46,6 +46,7 @@ from .relation_postprocessor import RelationPostprocessor
 from .grood import GrOODPostprocessor
 from .vra_postprocessor import VRAPostprocessor
 from .rff_postprocessor import RFFPostprocessor  # ADD THIS 
+from .rff_multilayer_postprocessor import RFFMultiLayerPostprocessor
 
 def get_postprocessor(config: Config):
     postprocessors = {
@@ -94,7 +95,8 @@ def get_postprocessor(config: Config):
         't2fnorm': T2FNormPostprocessor,
         'grood': GrOODPostprocessor,
         'vra': VRAPostprocessor,
-        'rff': RFFPostprocessor
+        'rff': RFFPostprocessor,
+        'rff_multilayer': RFFMultiLayerPostprocessor
     }
 
     return postprocessors[config.postprocessor.name](config)

@@ -1,0 +1,16 @@
+postprocessor:
+  name: rff_multilayer
+  postprocessor_args:
+    kernel_bandwidth: auto
+    feature_dim: 2048
+    target_rate: 0.05
+    layer_indices: [0, 1, 2, 3, 4]
+    reduce_dim_list: ['pca_64', 'pca_128', 'pca_256', 'pca_512', 'pca_512']
+    near_ood_layers: [1, 2, 3]
+    far_ood_layers: [3, 4]
+    scoring_mode: max
+  postprocessor_sweep:
+    kernel_bandwidth: [0.1, 0.25, 0.35, 0.5, 1.0]
+    feature_dim: [1024, 2048, 4096]
+    scoring_mode: ['max', 'mean', 'weighted']
+  APS_mode: False
